@@ -48,5 +48,5 @@ RailSanchalak/
 
 1. **Clone the repository**  
    ```bash
-   git clone https://github.com/username/railway-scheduling-system.git
-   cd railway-scheduling-system
+   git clone https://github.com/username/Rail.Sanchalak.git
+   cd Rail.Sanchalak
