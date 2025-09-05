@@ -30,8 +30,9 @@ The system integrates seamlessly with existing railway control infrastructure, p
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Structure
 
+```text
 RailSanchalak/
 ├── backend/ # Python backend, API, ML core logic
 ├── frontend/ # React/Electron dashboard
@@ -40,6 +41,7 @@ RailSanchalak/
 ├── tests/ # Unit & integration tests
 ├── requirements.txt
 └── README.md
+```
 ---
 
 ## 🚀 Installation & Setup  
