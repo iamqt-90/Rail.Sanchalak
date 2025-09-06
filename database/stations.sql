@@ -1,0 +1,66 @@
+-- Stations Database
+-- Contains detailed station information and infrastructure
+
+CREATE TABLE IF NOT EXISTS stations (
+    station_code VARCHAR(10) PRIMARY KEY,
+    station_name VARCHAR(100) NOT NULL,
+    local_name VARCHAR(100),
+    zone VARCHAR(10) NOT NULL,
+    division VARCHAR(50),
+    elevation INTEGER,
+    latitude DECIMAL(10, 8),
+    longitude DECIMAL(11, 8),
+    station_type VARCHAR(20), -- Junction, Terminal, Regular, Halt
+    station_category VARCHAR(10), -- NSG-1, NSG-2, etc.
+    number_of_platforms INTEGER,
+    track_type VARCHAR(30), -- Double Electric-Line, Single Line, etc.
+    address TEXT,
+    nearby_airport VARCHAR(100),
+    airport_distance_km INTEGER,
+    number_of_halting_trains INTEGER,
+    number_of_originating_trains INTEGER,
+    number_of_terminating_trains INTEGER,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Insert Pune Junction details
+INSERT INTO stations (
+    station_code, 
+    station_name, 
+    local_name,
+    zone, 
+    division,
+    elevation, 
+    latitude, 
+    longitude,
+    station_type, 
+    station_category,
+    number_of_platforms,
+    track_type,
+    address,
+    nearby_airport,
+    airport_distance_km,
+    number_of_halting_trains,
+    number_of_originating_trains,
+    number_of_terminating_trains
+) VALUES (
+    'PUNE', 
+    'Pune Jn', 
+    'पुणे जंक्शन',
+    'CR', 
+    'Pune',
+    560, 
+    18.5285, 
+    73.8748,
+    'Junction', 
+    'NSG-1',
+    6,
+    'Double Electric-Line',
+    'Jn Pt: DD/MFJ/KYN, Tel: 020 26126575, HH Prince Aga Khan Road, Opp to Hotel Sheraton Grand, Pune 411001',
+    'Pune Lohegaon Airport (PNQ)',
+    8,
+    156,
+    82,
+    84
+);
