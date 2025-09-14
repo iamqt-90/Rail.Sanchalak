@@ -64,3 +64,21 @@ INSERT INTO stations (
     82,
     84
 );
+('ADI',  
+'Ahmedabad Jn',  
+'अहमदाबाद जंक्शन (कालूपुर)',  
+'WR',  
+'Ahmedabad',  
+52.5,  
+23.0266,  
+72.6008,  
+'Junction',  
+'NSG-1',  
+9,  
+'Triple Electric-Line (Broad Gauge)',  
+'Kalupur Railway Station Rd, Sakar Bazar, Kalupur, Ahmedabad, Gujarat 380002',  
+'Sardar Vallabhbhai Patel International Airport (AMD)',  
+6,  
+185,  
+42,  
+38);
