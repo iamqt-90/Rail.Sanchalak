@@ -118,3 +118,86 @@ INSERT INTO switches_points (switch_id, station_code, switch_type, remote_contro
 ('PUNE-SW-02', 'PUNE', 'Turnout', TRUE, TRUE),
 ('PUNE-SW-03', 'PUNE', 'Crossover', TRUE, TRUE),
 ('PUNE-SW-04', 'PUNE', 'Diamond Crossing', TRUE, TRUE);
+
+-- Insert platform data for Ahmedabad Junction
+INSERT INTO platforms (platform_id, station_code, platform_number, platform_length_m, covered_length_m, facilities, accessibility) VALUES
+('ADI-PF1', 'ADI', '1', 550, 400, '{"waiting_room": true, "food_stall": true, "water": true}', TRUE),
+('ADI-PF2', 'ADI', '2', 550, 400, '{"waiting_room": true, "food_stall": true, "water": true}', TRUE),
+('ADI-PF3', 'ADI', '3', 550, 400, '{"waiting_room": true, "food_stall": true, "water": true}', TRUE),
+('ADI-PF4', 'ADI', '4', 500, 350, '{"waiting_room": false, "food_stall": true, "water": true}', TRUE),
+('ADI-PF5', 'ADI', '5', 500, 350, '{"waiting_room": false, "food_stall": true, "water": true}', FALSE),
+('ADI-PF6', 'ADI', '6', 500, 350, '{"waiting_room": false, "food_stall": false, "water": true}', FALSE),
+('ADI-PF7', 'ADI', '7', 500, 350, '{"waiting_room": false, "food_stall": false, "water": true}', FALSE),
+('ADI-PF8', 'ADI', '8', 500, 300, '{"waiting_room": false, "food_stall": true, "water": true}', FALSE),
+('ADI-PF9', 'ADI', '9', 500, 300, '{"waiting_room": false, "food_stall": true, "water": true}', FALSE);
+
+-- Insert signal data for Ahmedabad Junction area
+INSERT INTO signals (signal_id, signal_type, station_code, direction, automatic) VALUES
+('ADI-HS-UP', 'Home Signal', 'ADI', 'UP', TRUE),
+('ADI-HS-DN', 'Home Signal', 'ADI', 'DOWN', TRUE),
+('ADI-SS-1', 'Starter Signal', 'ADI', 'UP', TRUE),
+('ADI-SS-2', 'Starter Signal', 'ADI', 'DOWN', TRUE),
+('ADI-AS-1', 'Advanced Starter', 'ADI', 'UP', TRUE),
+('ADI-AS-2', 'Advanced Starter', 'ADI', 'DOWN', TRUE);
+
+-- Insert switch/points data for Ahmedabad Junction
+INSERT INTO switches_points (switch_id, station_code, switch_type, remote_controlled, interlocked) VALUES
+('ADI-SW-01', 'ADI', 'Turnout', TRUE, TRUE),
+('ADI-SW-02', 'ADI', 'Turnout', TRUE, TRUE),
+('ADI-SW-03', 'ADI', 'Crossover', TRUE, TRUE),
+('ADI-SW-04', 'ADI', 'Diamond Crossing', TRUE, TRUE);
+
+-- Insert platform data for Varanasi Junction
+INSERT INTO platforms (platform_id, station_code, platform_number, platform_length_m, covered_length_m, facilities, accessibility) VALUES
+('BSB-PF1', 'BSB', '1', 600, 450, '{"waiting_room": true, "food_stall": true, "water": true}', TRUE),
+('BSB-PF2', 'BSB', '2', 600, 450, '{"waiting_room": true, "food_stall": true, "water": true}', TRUE),
+('BSB-PF3', 'BSB', '3', 550, 400, '{"waiting_room": true, "food_stall": true, "water": true}', TRUE),
+('BSB-PF4', 'BSB', '4', 550, 350, '{"waiting_room": false, "food_stall": true, "water": true}', TRUE),
+('BSB-PF5', 'BSB', '5', 550, 350, '{"waiting_room": false, "food_stall": true, "water": true}', FALSE),
+('BSB-PF6', 'BSB', '6', 500, 300, '{"waiting_room": false, "food_stall": true, "water": true}', FALSE),
+('BSB-PF7', 'BSB', '7', 500, 300, '{"waiting_room": false, "food_stall": true, "water": true}', FALSE),
+('BSB-PF8', 'BSB', '8', 500, 300, '{"waiting_room": false, "food_stall": false, "water": true}', FALSE),
+('BSB-PF9', 'BSB', '9', 500, 300, '{"waiting_room": false, "food_stall": false, "water": true}', FALSE);
+
+-- Insert signal data for Varanasi Junction area
+INSERT INTO signals (signal_id, signal_type, station_code, direction, automatic) VALUES
+('BSB-HS-UP', 'Home Signal', 'BSB', 'UP', TRUE),
+('BSB-HS-DN', 'Home Signal', 'BSB', 'DOWN', TRUE),
+('BSB-SS-1', 'Starter Signal', 'BSB', 'UP', TRUE),
+('BSB-SS-2', 'Starter Signal', 'BSB', 'DOWN', TRUE),
+('BSB-AS-1', 'Advanced Starter', 'BSB', 'UP', TRUE),
+('BSB-AS-2', 'Advanced Starter', 'BSB', 'DOWN', TRUE);
+
+-- Insert switch/points data for Varanasi Junction
+INSERT INTO switches_points (switch_id, station_code, switch_type, remote_controlled, interlocked) VALUES
+('BSB-SW-01', 'BSB', 'Turnout', TRUE, TRUE),
+('BSB-SW-02', 'BSB', 'Turnout', TRUE, TRUE),
+('BSB-SW-03', 'BSB', 'Crossover', TRUE, TRUE),
+('BSB-SW-04', 'BSB', 'Diamond Crossing', TRUE, TRUE);
+
+-- Insert platform data for Jaipur Junction
+INSERT INTO platforms (platform_id, station_code, platform_number, platform_length_m, covered_length_m, facilities, accessibility) VALUES
+('JP-PF1', 'JP', '1', 550, 400, '{"waiting_room": true, "food_stall": true, "water": true}', TRUE),
+('JP-PF2', 'JP', '2', 550, 400, '{"waiting_room": true, "food_stall": true, "water": true}', TRUE),
+('JP-PF3', 'JP', '3', 500, 350, '{"waiting_room": true, "food_stall": true, "water": true}', TRUE),
+('JP-PF4', 'JP', '4', 500, 350, '{"waiting_room": false, "food_stall": true, "water": true}', TRUE),
+('JP-PF5', 'JP', '5', 500, 300, '{"waiting_room": false, "food_stall": true, "water": true}', FALSE),
+('JP-PF6', 'JP', '6', 500, 300, '{"waiting_room": false, "food_stall": true, "water": true}', FALSE),
+('JP-PF7', 'JP', '7', 500, 300, '{"waiting_room": false, "food_stall": false, "water": true}', FALSE);
+
+-- Insert signal data for Jaipur Junction area
+INSERT INTO signals (signal_id, signal_type, station_code, direction, automatic) VALUES
+('JP-HS-UP', 'Home Signal', 'JP', 'UP', TRUE),
+('JP-HS-DN', 'Home Signal', 'JP', 'DOWN', TRUE),
+('JP-SS-1', 'Starter Signal', 'JP', 'UP', TRUE),
+('JP-SS-2', 'Starter Signal', 'JP', 'DOWN', TRUE),
+('JP-AS-1', 'Advanced Starter', 'JP', 'UP', TRUE),
+('JP-AS-2', 'Advanced Starter', 'JP', 'DOWN', TRUE);
+
+-- Insert switch/points data for Jaipur Junction
+INSERT INTO switches_points (switch_id, station_code, switch_type, remote_controlled, interlocked) VALUES
+('JP-SW-01', 'JP', 'Turnout', TRUE, TRUE),
+('JP-SW-02', 'JP', 'Turnout', TRUE, TRUE),
+('JP-SW-03', 'JP', 'Crossover', TRUE, TRUE),
+('JP-SW-04', 'JP', 'Diamond Crossing', TRUE, TRUE);
+
