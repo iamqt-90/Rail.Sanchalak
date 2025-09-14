@@ -64,3 +64,42 @@ INSERT INTO stations (
     82,
     84
 );
+INSERT INTO stations (
+    station_code, 
+    station_name, 
+    local_name,
+    zone, 
+    division,
+    elevation, 
+    latitude, 
+    longitude,
+    station_type, 
+    station_category,
+    number_of_platforms,
+    track_type,
+    address,
+    nearby_airport,
+    airport_distance_km,
+    number_of_halting_trains,
+    number_of_originating_trains,
+    number_of_terminating_trains
+) VALUES (
+    'NDLS', 
+    'New Delhi Jn', 
+    'नई दिल्ली जंक्शन',
+    'NR', 
+    'Delhi',
+    216, 
+    28.6430, 
+    77.2220,
+    'Junction', 
+    'NSG-1',
+    16,
+    'Double Electric-Line',
+    'Bhavbhuti Marg, Ajmeri Gate, Paharganj, New Delhi, Delhi 110006',
+    'Indira Gandhi International Airport (DEL)',
+    15,
+    867,
+    336,
+    331
+);
