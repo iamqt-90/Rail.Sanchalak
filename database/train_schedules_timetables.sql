@@ -36,4 +36,16 @@ INSERT INTO train_schedules (train_id, station_code, station_name, arrival_time,
 ('22131', 'JBP', 'Jabalpur', '08:50', '09:00', '10m', '4', 2, 1044, 73, 411, 'WCR', 13),
 ('22131', 'KTE', 'Katni Jn', '10:15', '10:20', '5m', '2', 2, 1135, 51, 381, 'WCR', 14),
 ('22131', 'STA', 'Satna Jn', '12:15', '12:20', '5m', '2', 2, 1233, 38, 315, 'WCR', 15),
-('22131', 'PRYJ', 'Prayagraj Jn', '17:00', '17:20', '20m', '7,8', 2, 1410, 15, 97, 'NCR', 16)
+('22131', 'PRYJ', 'Prayagraj Jn', '17:00', '17:20', '20m', '7,8', 2, 1410, 15, 97, 'NCR', 16);
+
+-- Insert schedule data for 12302 New Delhi – Howrah Rajdhani Express (via Gaya)
+INSERT INTO train_schedules (train_id, station_code, station_name, arrival_time, departure_time, halt_duration, platform, day, distance_km, speed_kmh, elevation, zone, sequence_number) VALUES
+('12302', 'NDLS', 'New Delhi', NULL, '16:50', NULL, '14', 1, 0, 80, 216, 'NR', 1),
+('12302', 'CNB', 'Kanpur Central', '21:32', '21:37', '5m', '6', 1, 441, 88, 126, 'NCR', 2),
+('12302', 'PRYJ', 'Prayagraj Jn', '23:41', '23:43', '2m', '4', 1, 636, 95, 98, 'NCR', 3),
+('12302', 'DDU', 'Pt Deen Dayal Upadhyaya Jn', '01:35', '01:45', '10m', '1', 2, 788, 76, 84, 'ECR', 4),
+('12302', 'GAYA', 'Gaya Jn', '03:57', '04:00', '3m', '3', 2, 991, 83, 117, 'ECR', 5),
+('12302', 'PNME', 'Parasnath', '05:43', '05:45', '2m', '2', 2, 1143, 79, 415, 'ECR', 6),
+('12302', 'DHN', 'Dhanbad Jn', '06:33', '06:38', '5m', '1', 2, 1190, 74, 247, 'ECR', 7),
+('12302', 'ASN', 'Asansol Jn', '07:18', '07:20', '2m', '5', 2, 1249, 77, 97, 'ER', 8),
+('12302', 'HWH', 'Howrah Jn', '09:55', NULL, NULL, '8,9', 2, 1449, 70, 9, 'ER', 9);
