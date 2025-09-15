@@ -118,3 +118,75 @@ INSERT INTO switches_points (switch_id, station_code, switch_type, remote_contro
 ('PUNE-SW-02', 'PUNE', 'Turnout', TRUE, TRUE),
 ('PUNE-SW-03', 'PUNE', 'Crossover', TRUE, TRUE),
 ('PUNE-SW-04', 'PUNE', 'Diamond Crossing', TRUE, TRUE);
+
+-- Platforms for New Delhi (NDLS)
+INSERT INTO platforms (platform_id, station_code, platform_number, platform_length_m, covered_length_m, facilities, accessibility) VALUES
+('NDLS-PF1', 'NDLS', '1', 550, 400, '{"waiting_room": true, "food_stall": true, "water": true}', TRUE),
+('NDLS-PF2', 'NDLS', '2', 550, 400, '{"waiting_room": true, "food_stall": true, "water": true}', TRUE),
+('NDLS-PF3', 'NDLS', '3', 550, 400, '{"waiting_room": true, "food_stall": false, "water": true}', TRUE),
+('NDLS-PF4', 'NDLS', '4', 500, 350, '{"waiting_room": false, "food_stall": true, "water": true}', TRUE),
+('NDLS-PF5', 'NDLS', '5', 500, 350, '{"waiting_room": false, "food_stall": true, "water": false}', FALSE);
+
+-- Signals for New Delhi
+INSERT INTO signals (signal_id, signal_type, station_code, direction, automatic) VALUES
+('NDLS-HS-UP', 'Home Signal', 'NDLS', 'UP', TRUE),
+('NDLS-HS-DN', 'Home Signal', 'NDLS', 'DOWN', TRUE),
+('NDLS-SS-1', 'Starter Signal', 'NDLS', 'UP', TRUE),
+('NDLS-SS-2', 'Starter Signal', 'NDLS', 'DOWN', TRUE),
+('NDLS-AS-1', 'Advanced Starter', 'NDLS', 'UP', TRUE),
+('NDLS-AS-2', 'Advanced Starter', 'NDLS', 'DOWN', TRUE);
+
+-- Switches for New Delhi
+INSERT INTO switches_points (switch_id, station_code, switch_type, remote_controlled, interlocked) VALUES
+('NDLS-SW-01', 'NDLS', 'Turnout', TRUE, TRUE),
+('NDLS-SW-02', 'NDLS', 'Turnout', TRUE, TRUE),
+('NDLS-SW-03', 'NDLS', 'Crossover', TRUE, TRUE),
+('NDLS-SW-04', 'NDLS', 'Diamond Crossing', TRUE, TRUE);
+
+-- Platforms for Howrah (HWH)
+INSERT INTO platforms (platform_id, station_code, platform_number, platform_length_m, covered_length_m, facilities, accessibility) VALUES
+('HWH-PF1', 'HWH', '1', 600, 450, '{"waiting_room": true, "food_stall": true, "water": true}', TRUE),
+('HWH-PF2', 'HWH', '2', 600, 450, '{"waiting_room": true, "food_stall": false, "water": true}', TRUE),
+('HWH-PF3', 'HWH', '3', 550, 400, '{"waiting_room": false, "food_stall": true, "water": true}', TRUE),
+('HWH-PF4', 'HWH', '4', 550, 400, '{"waiting_room": false, "food_stall": true, "water": false}', FALSE),
+('HWH-PF5', 'HWH', '5', 500, 350, '{"waiting_room": false, "food_stall": false, "water": true}', FALSE);
+
+-- Signals for Howrah
+INSERT INTO signals (signal_id, signal_type, station_code, direction, automatic) VALUES
+('HWH-HS-UP', 'Home Signal', 'HWH', 'UP', TRUE),
+('HWH-HS-DN', 'Home Signal', 'HWH', 'DOWN', TRUE),
+('HWH-SS-1', 'Starter Signal', 'HWH', 'UP', TRUE),
+('HWH-SS-2', 'Starter Signal', 'HWH', 'DOWN', TRUE),
+('HWH-AS-1', 'Advanced Starter', 'HWH', 'UP', TRUE),
+('HWH-AS-2', 'Advanced Starter', 'HWH', 'DOWN', TRUE);
+
+-- Switches for Howrah
+INSERT INTO switches_points (switch_id, station_code, switch_type, remote_controlled, interlocked) VALUES
+('HWH-SW-01', 'HWH', 'Turnout', TRUE, TRUE),
+('HWH-SW-02', 'HWH', 'Turnout', TRUE, TRUE),
+('HWH-SW-03', 'HWH', 'Crossover', TRUE, TRUE),
+('HWH-SW-04', 'HWH', 'Diamond Crossing', TRUE, TRUE);
+
+-- Platforms for CSMT Mumbai
+INSERT INTO platforms (platform_id, station_code, platform_number, platform_length_m, covered_length_m, facilities, accessibility) VALUES
+('CSMT-PF1', 'CSMT', '1', 500, 350, '{"waiting_room": true, "food_stall": true, "water": true}', TRUE),
+('CSMT-PF2', 'CSMT', '2', 500, 350, '{"waiting_room": true, "food_stall": true, "water": true}', TRUE),
+('CSMT-PF3', 'CSMT', '3', 500, 350, '{"waiting_room": true, "food_stall": false, "water": true}', TRUE),
+('CSMT-PF4', 'CSMT', '4', 450, 300, '{"waiting_room": false, "food_stall": true, "water": true}', FALSE),
+('CSMT-PF5', 'CSMT', '5', 450, 300, '{"waiting_room": false, "food_stall": false, "water": true}', FALSE);
+
+-- Signals for CSMT
+INSERT INTO signals (signal_id, signal_type, station_code, direction, automatic) VALUES
+('CSMT-HS-UP', 'Home Signal', 'CSMT', 'UP', TRUE),
+('CSMT-HS-DN', 'Home Signal', 'CSMT', 'DOWN', TRUE),
+('CSMT-SS-1', 'Starter Signal', 'CSMT', 'UP', TRUE),
+('CSMT-SS-2', 'Starter Signal', 'CSMT', 'DOWN', TRUE),
+('CSMT-AS-1', 'Advanced Starter', 'CSMT', 'UP', TRUE),
+('CSMT-AS-2', 'Advanced Starter', 'CSMT', 'DOWN', TRUE);
+
+-- Switches for CSMT
+INSERT INTO switches_points (switch_id, station_code, switch_type, remote_controlled, interlocked) VALUES
+('CSMT-SW-01', 'CSMT', 'Turnout', TRUE, TRUE),
+('CSMT-SW-02', 'CSMT', 'Turnout', TRUE, TRUE),
+('CSMT-SW-03', 'CSMT', 'Crossover', TRUE, TRUE),
+('CSMT-SW-04', 'CSMT', 'Diamond Crossing', TRUE, TRUE);
