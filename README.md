@@ -1,52 +1,59 @@
-# 🚆 RailSanchalak  
-*Intelligent Railway Scheduling and Decision-Support System*  
+# Rail Sanchalak
 
-RailSanchalak is an intelligent, real-time decision-support system for Indian Railways’ operations. It leverages advanced machine learning and optimization algorithms to dynamically schedule train movements across congested rail sections, maximize throughput, and minimize delays.  
+A frontend application built with React, Vite, TypeScript, Tailwind CSS, React Router, React Query, Axios, Zustand, Recharts, and Framer Motion.
 
-The system integrates seamlessly with existing railway control infrastructure, provides conflict-free scheduling and re-optimization during disruptions, and delivers actionable insights through a modern dashboard.  
+## Features
 
----
+- React with TypeScript for type safety
+- Vite for fast development and building
+- Tailwind CSS for styling
+- React Router for navigation
+- React Query for data fetching and caching
+- Axios for HTTP requests
+- Zustand for state management
+- Recharts for data visualization
+- Framer Motion for animations
 
-## ✨ Features  
+## Getting Started
 
-- **Dynamic Train Scheduling** – AI and metaheuristics (RL, GA, Simulated Annealing) for optimal routing  
-- **Real-Time Decision Support** – recommendations for routing, precedence, holding, and crossings  
-- **Scenario Analysis** – run “what-if” simulations for disruptions and alternative schedules  
-- **Secure API Integration** – connect with signalling, timetable, and rolling stock systems  
-- **Interactive Dashboard** – intuitive UI with recommendations, explanations, and manual overrides  
-- **KPI Monitoring** – punctuality, delay, throughput, and infrastructure utilization  
-- **Audit Trails** – operational transparency and traceability  
-
----
-
-## 🛠️ Tech Stack  
-
-- **Core:** Python (ML models, scheduling engine, backend)  
-- **Optimization:** Reinforcement Learning, Genetic Algorithms, Simulated Annealing  
-- **API Layer:** FastAPI (REST API server)  
-- **Frontend:** React (web dashboard) or Electron (desktop client)  
-- **Database:** PostgreSQL / MySQL  
-- **Integration:** CRIS, RTIS (Indian Railways data sources)  
-
----
-
-## 📁 Project Structure
-
-```text
-RailSanchalak/
-├── backend/ # Python backend, API, ML core logic
-├── frontend/ # React/Electron dashboard
-├── data/ # Scripts and sample datasets
-├── docs/ # Documentation & architecture diagrams
-├── tests/ # Unit & integration tests
-├── requirements.txt
-└── README.md
-```
----
-
-## 🚀 Installation & Setup  
-
-1. **Clone the repository**  
+1. Install dependencies:
    ```bash
-   git clone https://github.com/username/Rail.Sanchalak.git
-   cd Rail.Sanchalak
+   npm install
+   ```
+
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Open your browser and navigate to `http://localhost:5173`
+
+## Project Structure
+
+- `src/main.tsx`: Entry point
+- `src/App.tsx`: Main app component with routing
+- `src/components/`: Reusable components
+- `src/store/`: Zustand store
+- `src/api/`: Axios instance
+- `src/hooks/`: Custom hooks for React Query
+- `src/index.css`: Global styles with Tailwind
+
+## Scripts
+
+- `npm run dev`: Start development server
+- `npm run build`: Build for production
+- `npm run preview`: Preview production build
+- `npm run lint`: Run ESLint
+
+## Technologies Used
+
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- React Router DOM
+- TanStack React Query
+- Axios
+- Zustand
+- Recharts
+- Framer Motion
