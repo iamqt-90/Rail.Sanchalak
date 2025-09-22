@@ -28,10 +28,14 @@ CREATE TABLE IF NOT EXISTS train_status_log (
     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Sample real-time data for 22131 Gyan Ganga SF Express
+-- Sample real-time positions for new Pune trains
 INSERT INTO train_positions (train_id, current_station, next_station, speed_kmh, delay_minutes, status) VALUES
-('22131', 'PUNE', 'DDCC', 0, 0, 'At Platform');
+('11001', 'PUNE', 'STR', 0, 0, 'At Platform'),
+('12001', 'PUNE', 'KOP', 0, 0, 'At Platform'),
+('13001', 'PUNE', 'KLT', 0, 0, 'At Platform');
 
--- Sample status log entries
+-- Sample status log entries for new trains
 INSERT INTO train_status_log (train_id, station_code, event_type, scheduled_time, actual_time, delay_minutes) VALUES
-('22131', 'PUNE', 'Departure', '16:15', '16:15', 0);
+('11001', 'PUNE', 'Departure', '06:00', '06:00', 0),
+('12001', 'PUNE', 'Departure', '06:00', '06:00', 0),
+('13001', 'PUNE', 'Departure', '06:00', '06:00', 0);
