@@ -12,6 +12,9 @@ CREATE TABLE IF NOT EXISTS trains (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Insert train data
+-- Insert new trains from Pune hub
 INSERT INTO trains (train_id, train_name, train_type, origin_station, destination_station, status)
-VALUES ('22131', 'Gyan Ganga SF Exp', 'Superfast Express', 'PUNE', 'PRYJ', 'Active');
+VALUES 
+('11001', 'Pune-Chennai Express', 'Superfast Express', 'PUNE', 'MAS', 'Active'),
+('12001', 'Pune-Bengaluru Express', 'Superfast Express', 'PUNE', 'SBC', 'Active'),
+('13001', 'Pune-Hyderabad Express', 'Superfast Express', 'PUNE', 'SC', 'Active');
