@@ -20,20 +20,30 @@ CREATE TABLE IF NOT EXISTS train_schedules (
 );
 
 -- Insert schedule data for 22131 Gyan Ganga SF Express
-INSERT INTO train_schedules (train_id, station_code, station_name, arrival_time, departure_time, halt_duration, platform, day, distance_km, speed_kmh, elevation, zone, sequence_number) VALUES
-('22131', 'PUNE', 'Pune Jn', NULL, '16:15', NULL, '1,3', 1, 0, 69, 560, 'CR', 1),
-('22131', 'DDCC', 'Daund Chord Line', '17:18', '17:20', '2m', NULL, 1, 73, 73, 525, 'CR', 2),
-('22131', 'ANG', 'Ahmednagar Jn', '18:27', '18:30', '3m', NULL, 1, 155, 60, 640, 'CR', 3),
-('22131', 'BAP', 'Belapur', '19:37', '19:40', '3m', NULL, 1, 222, 57, 535, 'CR', 4),
-('22131', 'KPG', 'Kopargaon', '20:27', '20:30', '3m', NULL, 1, 266, 34, 550, 'CR', 5),
-('22131', 'MMR', 'Manmad Jn', '21:45', '21:50', '5m', '1,2', 1, 308, 79, NULL, 'CR', 6),
-('22131', 'BSL', 'Bhusaval Jn', '00:10', '00:15', '5m', '5,6', 2, 492, 63, 205, 'CR', 7),
-('22131', 'KNW', 'Khandwa Jn', '02:12', '02:15', '3m', '4', 2, 616, 74, 302, 'CR', 8),
-('22131', 'HD', 'Harda', '03:43', '03:48', '5m', '2', 2, 724, 44, 341, 'WCR', 9),
-('22131', 'ET', 'Itarsi Jn', '05:30', '05:40', '10m', '4,5', 2, 799, 83, 329, 'WCR', 10),
-('22131', 'PPI', 'Pipariya', '06:28', '06:30', '2m', NULL, 2, 866, 89, 335, 'WCR', 11),
-('22131', 'NU', 'Narsinghpur', '07:33', '07:35', '2m', NULL, 2, 960, 67, 364, 'WCR', 12),
-('22131', 'JBP', 'Jabalpur', '08:50', '09:00', '10m', '4', 2, 1044, 73, 411, 'WCR', 13),
-('22131', 'KTE', 'Katni Jn', '10:15', '10:20', '5m', '2', 2, 1135, 51, 381, 'WCR', 14),
-('22131', 'STA', 'Satna Jn', '12:15', '12:20', '5m', '2', 2, 1233, 38, 315, 'WCR', 15),
-('22131', 'PRYJ', 'Prayagraj Jn', '17:00', '17:20', '20m', '7,8', 2, 1410, 15, 97, 'NCR', 16)
+INSERT INTO train_schedules 
+(train_id, station_code, station_name, arrival_time, departure_time, halt_duration, platform, day, distance_km, speed_kmh, elevation, zone, sequence_number) VALUES
+('11001', 'PUNE', 'Pune Jn', NULL, '06:00', NULL, '1,2', 1, 0, 69, 560, 'CR', 1),
+('11001', 'STR', 'Satara', '07:15', '07:18', '3m', '1', 1, 115, 75, 742, 'CR', 2),
+('11001', 'KAR', 'Karad', '08:10', '08:12', '2m', '2', 1, 185, 60, 586, 'CR', 3),
+('11001', 'PNL', 'Pandharpur', '09:20', '09:23', '3m', '1', 1, 270, 70, 493, 'CR', 4),
+('11001', 'SOL', 'Solapur', '10:40', '10:45', '5m', '3', 1, 370, 80, 457, 'CR', 5),
+('11001', 'TKL', 'Tandulwadi', '12:15', '12:17', '2m', '1', 1, 470, 70, 123, 'SR', 6),
+('11001', 'AJJ', 'Arakkonam', '15:30', '15:35', '5m', '2', 1, 780, 80, 108, 'SR', 7),
+('11001', 'KPD', 'Katpadi', '16:05', '16:10', '5m', '3', 1, 820, 75, 170, 'SR', 8),
+('11001', 'VR', 'Vellore', '16:50', '16:52', '2m', '2', 1, 855, 60, 216, 'SR', 9),
+('11001', 'MAS', 'Chennai Central', '19:30', NULL, NULL, '1,2', 1, 1000, 70, 6, 'SR', 10);
+
+INSERT INTO train_schedules 
+(train_id, station_code, station_name, arrival_time, departure_time, halt_duration, platform, day, distance_km, speed_kmh, elevation, zone, sequence_number) VALUES
+('12001', 'PUNE', 'Pune Jn', NULL, '06:00', NULL, '1,2', 1, 0, 69, 560, 'CR', 1),
+('12001', 'KOP', 'Koppal', '08:00', '08:03', '3m', '1', 1, 250, 75, 510, 'SWR', 2),
+('12001', 'BEL', 'Belagavi', '09:30', '09:35', '5m', '2', 1, 330, 80, 751, 'SWR', 3),
+('12001', 'CHN', 'Channarayapatna', '11:30', '11:32', '2m', '1', 1, 430, 70, 812, 'SWR', 4),
+('12001', 'SBC', 'Bengaluru City', '13:30', NULL, NULL, '1,2', 1, 530, 75, 920, 'SWR', 5);
+
+INSERT INTO train_schedules 
+(train_id, station_code, station_name, arrival_time, departure_time, halt_duration, platform, day, distance_km, speed_kmh, elevation, zone, sequence_number) VALUES
+('13001', 'PUNE', 'Pune Jn', NULL, '06:00', NULL, '1,2', 1, 0, 69, 560, 'CR', 1),
+('13001', 'KLT', 'Kalaburagi', '09:00', '09:05', '5m', '1', 1, 380, 70, 429, 'SCR', 2),
+('13001', 'NZD', 'Nizamabad', '12:00', '12:05', '5m', '2', 1, 620, 75, 392, 'SCR', 3),
+('13001', 'SC', 'Secunderabad', '14:30', NULL, NULL, '1,2', 1, 780, 80, 531, 'SCR', 4);
