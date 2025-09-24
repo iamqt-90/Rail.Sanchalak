@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Rail Sanchalak — Simulated Train Tracking</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #f4f6f8;
+    }
+    .container {
+      display: flex;
+      gap: 20px;
+      width: 1100px;
+      max-width: 95%;
+    }
+    .panel {
+      width: 320px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+    label { font-size: 14px; font-weight: bold; margin-bottom: 6px; display: block; }
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+    }
+    button {
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .btn-primary { background: #0b6efd; color: #fff; margin-right: 10px; }
+    .btn-ghost { background: #f8f9fa; color: #333; border: 1px solid #ddd; }
+    #map {
+      flex: 1;
+      height: 600px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Left panel -->
+    <div class="panel">
+      <label for="sourceSelect">Source (Pune)</label>
+      <select id="sourceSelect">
+        <option value="">— Select Source —</option>
+      </select>
+
+      <label for="destSelect">Destination (Patna)</label>
+      <select id="destSelect">
+        <option value="">— Select Destination —</option>
+      </select>
+
+      <button id="showRouteBtn" class="btn-primary">Show Route</button>
+      <button id="resetBtn" class="btn-ghost">Reset</button>
+    </div>
+
+    <!-- Map -->
+    <div id="map"></div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <script>
+    // Station coordinates
+    const stations = {
+      "Pune Junction": [18.5286, 73.8745],
+      "Shivajinagar": [18.5328, 73.8769],
+      "Khadki": [18.5513, 73.8416],
+      "Hadapsar": [18.5012, 73.9336],
+      "Pimpri": [18.6298, 73.7997],
+      "Patna Junction": [25.5941, 85.1376],
+      "Rajendra Nagar Terminal": [25.5877, 85.0985],
+      "Danapur": [25.6009, 85.0111],
+      "Patliputra Junction": [25.5736, 85.0900],
+      "Gulzarbagh": [25.6045, 85.1539]
+    };
+
+    const puneStations = ["Pune Junction","Shivajinagar","Khadki","Hadapsar","Pimpri"];
+    const patnaStations = ["Patna Junction","Rajendra Nagar Terminal","Danapur","Patliputra Junction","Gulzarbagh"];
+
+    // Populate selects
+    const sourceSelect = document.getElementById('sourceSelect');
+    const destSelect = document.getElementById('destSelect');
+    puneStations.forEach(s => { let o=document.createElement("option");o.value=s;o.textContent=s;sourceSelect.appendChild(o); });
+    patnaStations.forEach(s => { let o=document.createElement("option");o.value=s;o.textContent=s;destSelect.appendChild(o); });
+
+    // Map setup
+    const map = L.map('map').setView([22, 79], 5);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    let routeLine, trainMarker, animTimer, stepIndex;
+
+    // Train icon
+    const trainIcon = L.icon({
+      iconUrl: "https://cdn-icons-png.flaticon.com/512/747/747310.png",
+      iconSize: [32, 32],
+      iconAnchor: [16, 16]
+    });
+
+    // Show route + simulate train
+    document.getElementById('showRouteBtn').addEventListener('click', () => {
+      const src = sourceSelect.value, dst = destSelect.value;
+      if (!src || !dst) return alert("Select both stations!");
+
+      const srcCoords = stations[src], dstCoords = stations[dst];
+      if (!srcCoords || !dstCoords) return;
+
+      // Clear previous
+      if (routeLine) { map.removeLayer(routeLine); }
+      if (trainMarker) { map.removeLayer(trainMarker); clearInterval(animTimer); }
+
+      // Draw line
+      routeLine = L.polyline([srcCoords, dstCoords], {color: "#0b6efd", weight: 5}).addTo(map);
+      map.fitBounds(routeLine.getBounds(), {padding:[50,50]});
+
+      // Place train at start
+      trainMarker = L.marker(srcCoords, {icon: trainIcon}).addTo(map);
+
+      // Animate train
+      const latlngs = routeLine.getLatLngs();
+      stepIndex = 0;
+      const steps = 200; // smoothness
+      animTimer = setInterval(() => {
+        stepIndex++;
+        const lat = srcCoords[0] + (dstCoords[0]-srcCoords[0])*(stepIndex/steps);
+        const lng = srcCoords[1] + (dstCoords[1]-srcCoords[1])*(stepIndex/steps);
+        trainMarker.setLatLng([lat, lng]);
+        if (stepIndex >= steps) stepIndex = 0; // loop forever
+      }, 200);
+    });
+
+    // Reset
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      if (routeLine) { map.removeLayer(routeLine); routeLine=null; }
+      if (trainMarker) { map.removeLayer(trainMarker); trainMarker=null; clearInterval(animTimer); }
+      sourceSelect.value = ""; destSelect.value = "";
+      map.setView([22,79], 5);
+    });
+  </script>
+</body>
+</html>
