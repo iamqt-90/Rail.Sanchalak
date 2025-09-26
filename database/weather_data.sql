@@ -1,2 +1,0 @@
--- Weather Data Database
--- Contains weather conditions, forecasts, and weather impact data for train operations
