@@ -19,13 +19,9 @@ export default function LoginPage() {
       return;
     }
 
-    // Allow only the provided credentials
-    if (username === "admin@example.com" && password === "1234") {
-      login(username, password);
-      navigate("/"); // Redirect to the actual dashboard route
-    } else {
-      setError("❌ Invalid username or password.");
-    }
+    // ✅ Allow login with any credentials
+    login(username, password);
+    navigate("/"); // Redirect to dashboard
   };
 
   return (
@@ -38,7 +34,7 @@ export default function LoginPage() {
           <div className="flex items-center mb-6">
             <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white mr-4 flex-shrink-0">
               <img
-                src="/public/logo.jpg"// replace with your logo
+                src="/public/logo.jpg" 
                 alt="Rail Sanchalak Logo"
                 className="w-full h-full object-cover"
               />
