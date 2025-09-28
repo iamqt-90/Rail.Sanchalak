@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuthStore } from '../store/useStore';
 
-function getPageName(pathname) {
+function getPageName(pathname: string) {
   if (pathname.startsWith('/stations')) return 'Stations';
   if (pathname.startsWith('/search')) return 'Search Train';
   if (pathname.startsWith('/idss')) return 'IDSS';

@@ -21,7 +21,7 @@ interface UIState {
 export const useAuthStore = create<AuthState>((set) => ({
   user: null,
   token: null,
-  login: async (id: string, password: string) => {
+  login: async (id: string, _password: string) => {
     // Temporary bypass: Always succeed with mock user for development
     // TODO: Implement actual backend validation
     const mockUser: User = {
