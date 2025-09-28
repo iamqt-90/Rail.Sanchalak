@@ -34,7 +34,7 @@ export default function LoginPage() {
           <div className="flex items-center mb-6">
             <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white mr-4 flex-shrink-0">
               <img
-                src="/public/logo.jpg" 
+                src="/logo.jpg" 
                 alt="Rail Sanchalak Logo"
                 className="w-full h-full object-cover"
               />
